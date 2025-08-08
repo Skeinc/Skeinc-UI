@@ -1,26 +1,32 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
 	"compileOnSave": false,
 	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"components": ["projects/components/src/public-api.ts"],
+      		"core": ["projects/core/src/public-api.ts"]
+		},
 		"strict": true,
-		"noImplicitOverride": true,
-		"noPropertyAccessFromIndexSignature": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"skipLibCheck": true,
-		"isolatedModules": true,
-		"experimentalDecorators": true,
-		"importHelpers": true,
 		"target": "ES2022",
-		"module": "preserve"
+		"module": "ES2022",
+		"experimentalDecorators": true,
+		"skipLibCheck": true,
+		"noImplicitOverride": true
 	},
 	"angularCompilerOptions": {
-		"enableI18nLegacyMessageIdFormat": false,
-		"strictInjectionParameters": true,
-		"strictInputAccessModifiers": true,
-		"typeCheckHostBindings": true,
-		"strictTemplates": true
+		"strictTemplates": true,
+    	"strictInjectionParameters": true
 	},
-	"files": []
+	"files": [],
+	"references": [
+		{
+			"path": "./projects/core/tsconfig.lib.json"
+		},
+		{
+			"path": "./projects/components/tsconfig.lib.json"
+		},
+		{
+			"path": "./projects/demo/tsconfig.app.json"
+		},
+	]
 }

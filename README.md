@@ -1,59 +1,52 @@
 # SkeincUI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+SkeincUI — это модульная библиотека UI-компонентов для Angular, разработанная с использованием монорепозитория. Проект включает:
 
-## Development server
+- 🧩 Готовые компоненты (кнопки, формы, таблицы и др.)
+- 🛠️ Инструменты для разработки (демо-приложение, тесты, документация)
+- 🎨 Кастомизируемые темы на основе CSS-переменных
+- ⚡ Оптимизированную производительность (Tree-shaking, Standalone Components)
 
-To start a local development server, run:
+Идеально для быстрого прототипирования и создания единого дизайн-системы в Angular-проектах.
 
-```bash
-ng serve
+## Структура проекта
+
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Skeinc-UI/
+├── .vscode/            # Конфигурации для VS Code (лаунчеры, настройки)
+├── node_modules/       # Зависимости проекта (автогенерируется)
+├── projects/           # Основные проекты в монорепозитории
+│   ├── components/         # Библиотека UI-компонентов
+│   │   |── src/
+│   │   |   ├── lib/                    # Исходный код компонентов
+│   │   |   └── public-api.ts           # Экспорт публичного API библиотеки
+│   │   |── ng-package.json         # Конфиг сборки библиотеки (ng-package)
+│   │   |── package.json            # Локальные зависимости, библиотеки
+│   │   |── tsconfig.lib.json       # TS-конфиг для сборки
+│   │   └── tsconfig.lib.prod.json  # Оптимизированная сборка для production
+|   |
+│   ├── core/               # Базовые сервисы и утилиты
+│   │   |── src/
+│   │   |   ├── lib/                    # Исходный код сервисов
+│   │   |   └── public-api.ts           # Экспорт сервисов
+│   │   |── ng-package.json         # Конфиг сборки библиотеки (ng-packagr)
+│   │   |── package.json            # Локальные зависимости, библиотеки
+│   │   |── tsconfig.lib.json       # TS-конфиг для сборки
+│   │   └── tsconfig.lib.prod.json  # Оптимизированная сборка для production
+|   |
+│   └── demo/               # Демо-приложение для тестирования компонентов
+│   │   |── public/             # Медиа ресурсы демо-приложения
+│   │   │   └── favicon.ico         # Иконка приложения
+│   │   |── src/                # Исходный код демо-приложения
+│   │   │   |── index.html          # Базовый HTML-файл
+│   │   │   |── main.ts             # Точка входа
+│   │   │   └── styles.scss         # Глобальные CSS-стили
+│   │   └── tsconfig.app.json   # Конфиг для приложения
+├── .editorconfig       # Единые стили кодирования для IDE
+├── .gitignore          # Игнорируемые файлы (node_modules, .env)
+├── angular.json        # Конфигурация Angular CLI (билды, сервер)
+├── package-lock.json   # Точные версии зависимостей
+├── package.json        # Зависимости и скрипты проекта
+├── README.md           # Описание проекта
+└── tsconfig.json       # Настройки TypeScript для всего workspace
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
